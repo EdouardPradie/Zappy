@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+
+from ai.src.client.Client import Client
+from ai.src.utils.Arguments import Argument
+
+def main():
+    (machine, port, name) = Argument.parse_arg()
+    client = Client(machine, port, name)
+    client.start_connection()
+    client.launcher()
+    client.close()
+
+if __name__ == '__main__':
+    exit(main())
